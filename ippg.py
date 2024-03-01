@@ -12,8 +12,8 @@ class IPPG:
     def __init__(self, video_path, fps = 30):
         self.video_path = video_path
         self.fps = fps
-        self.minFreq = 0.75 # Hz
-        self.maxFreq = 4 # Hz
+        self.minFreq = 1.0 # 0.75 # Hz
+        self.maxFreq = 4.0 # Hz
 
     def get_roi(self, image, roi):
         # Define the Region of Interest (ROI)
@@ -78,7 +78,7 @@ class IPPG:
         filtered_signal = np.transpose(filtered_signal, (1,0))
         return np.array(filtered_signal)
 
-    def compute_fft(self, signal, sample_rate):
+    def compute_fft(self, signal, sample_rate=30):
         signal_size = len(signal)
         signal = signal.flatten()
         fft_data = np.fft.rfft(signal) # FFT

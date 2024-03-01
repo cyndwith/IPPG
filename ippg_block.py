@@ -9,7 +9,8 @@ from tqdm import tqdm
 from scipy.signal import butter, lfilter
 from ippg import IPPG
 
-video_path = "sub14_video.mp4"
+ippg_videos = ['Subj_010.mp4', 'Subj_012.mp4', 'Subj_014.mp4', 'Subj_015.mp4', 'Subj_016.mp4']
+video_path = ippg_videos[0]
 video_ippg = IPPG(video_path)
 
 # Process each image and concatenate signals
